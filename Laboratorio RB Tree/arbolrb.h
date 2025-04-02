@@ -15,25 +15,25 @@ enum Color {RED, BLACK};
 
 // Estructura para representar un nodo del árbol
 struct Node {
-    int data;
-    bool color;
-    Node *left, *right, *parent;
-    Node(int data);
+    int data;         // Valor almacenado en el nodo
+    bool color;       // Color del nodo (Rojo o Negro)
+    Node *left, *right, *parent; // Punteros a los nodos hijo izquierdo, derecho y al nodo padre
+    Node(int data);   // Constructor del nodo
 };
 
 // Clase para representar el Árbol Rojo-Negro
 class RBTree {
 private:
-    Node *root;
+    Node *root;  // Raíz del árbol
 protected:
-    void rotateLeft(Node *&, Node *&);
-    void rotateRight(Node *&, Node *&);
-    void fixViolation(Node *&, Node *&);
+    void rotateLeft(Node *&, Node *&);  // Rotación a la izquierda
+    void rotateRight(Node *&, Node *&); // Rotación a la derecha
+    void fixViolation(Node *&, Node *&);// Corrección de violaciones tras la inserción
 public:
-    RBTree();
-    void insert(const int &n);
-    void inorder();
-    void levelOrder();
+    RBTree();  // Constructor del árbol
+    void insert(const int &n);  // Inserta un nuevo nodo
+    void inorder();  // Recorre el árbol en inorden
+    void levelOrder(); // Recorre el árbol por niveles
 };
 
 #include "arbolrb.cpp"
